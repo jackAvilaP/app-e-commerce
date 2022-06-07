@@ -9,10 +9,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Login from "./Login";
 import CartList from "./CartList";
 import { useNavigate } from "react-router-dom";
+
 const Menu = () => {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isCartListOpen, setIsCartListOpen] = useState(false);
   const navigate = useNavigate();
+  
   const openListCarts = () => {
     if (localStorage.getItem("token")) {
       setIsCartListOpen(!isCartListOpen);

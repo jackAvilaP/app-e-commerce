@@ -47,7 +47,7 @@ const Login = ({ setIsLoginOpen }) => {
       ) : (
         <>
           <FontAwesomeIcon icon={faCircleUser} className="faCircleUser" />
-          <h3>Hello! Enter your email</h3>
+          <h4>Hello! Enter your email (max@gmail.com, pass1234 )</h4>
           <input
             type="email"
             className="loginInput"

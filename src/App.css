@@ -169,7 +169,7 @@ html {
   background: white;
   padding: 20px;
   border-radius: 16px;
-  width: 1184px;
+  width: 1323px;
   flex-direction: row;
   align-content: center;
   justify-content: space-between;
@@ -321,9 +321,10 @@ img {
   height: 300px;
   transition: 0.6s;
 }
-.login h3{margin:10px 0;
+.login h4{margin:10px 0;
   color: rgba(151, 147, 147);
 }
+
 .list-modal {
   position: fixed;
   top: 100px;
@@ -487,6 +488,7 @@ input[type="number"] {
   justify-content: space-between;
   align-content: center;
   width: 350px;
+  margin-top: 20px;
 }
 .FontAwesomeTrash {
   color: #38beff;

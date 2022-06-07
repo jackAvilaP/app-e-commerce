@@ -12,27 +12,30 @@ const CartList = ({ isCartListOpen }) => {
     dispatch(getCartListThunk());
   }, [isCartListOpen]);
 
+  const Chekout = () => {
+    console.log('click')
+  };
   return (
     <div className={`list-modal ${isCartListOpen ? "open" : ""}`}>
       <h1 className="title-cart">Shopping cart</h1>
       {productsList.map((list, i) => (
-        <li className="cardList-modal title-cart" key={i + 324}>
-          <section className="cardList-item1">
-            {" "}
-            <h4>{list.brand}</h4>{" "}
-            <FontAwesomeIcon
-              className="FontAwesomeTrash"
-              icon={faTrash}
-              onClick={() => dispatch(deletCartListThunk(list.id))}
-            />
-          </section>{" "}
-          <p> {list.title} </p>
-          <p>quantity: {list.productsInCart.quantity}</p>
-          <p>$ {list.price}</p>
-        </li>
+          <li className="cardList-modal title-cart" key={i + 324}>
+            <section className="cardList-item1">
+              {" "}
+              <h4>{list.brand}</h4>{" "}
+              <FontAwesomeIcon
+                className="FontAwesomeTrash"
+                icon={faTrash}
+                onClick={() => dispatch(deletCartListThunk(list.id))}
+              />
+            </section>{" "}
+            <p> {list.title} </p>
+            <p>quantity: {list.productsInCart.quantity}</p>
+            <p>$ {list.price}</p>
+          </li>
       ))}
 
-      <button id="checkOut">Checkout</button>
+      <button id="checkOut" onClick={() => Chekout()}>Checkout</button>
     </div>
   );
 };

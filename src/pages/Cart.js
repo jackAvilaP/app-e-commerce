@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addCartsThunk, addPurchasesThunk } from "../redux/actions";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+
 const Cart = ({ productFound }) => {
   const [quanty, setQuanty] = useState(1);
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ const Cart = ({ productFound }) => {
       id: productFound.id,
       quantity: quanty
     };
+    
     if (localStorage.getItem("token")) {
       dispatch(addCartsThunk(productsInCart));
       dispatch(addPurchasesThunk());
@@ -47,9 +49,11 @@ const Cart = ({ productFound }) => {
             <section className="quantity-select">
               <button
                 className="button-quantity"
-                onClick={() => setQuanty(quanty + 1)}
+                onClick={() => {
+                  quanty > 0 && setQuanty(quanty - 1);
+                }}
               >
-                +
+                -
               </button>
               <input
                 type="number"
@@ -59,11 +63,9 @@ const Cart = ({ productFound }) => {
               />
               <button
                 className="button-quantity"
-                onClick={() => {
-                  quanty > 0 && setQuanty(quanty - 1);
-                }}
+                onClick={() => setQuanty(quanty + 1)}
               >
-                -
+                +
               </button>
             </section>
           </div>
